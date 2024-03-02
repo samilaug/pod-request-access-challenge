@@ -1,0 +1,415 @@
+@font-face {
+  font-family: "Chivo";
+  src: url('/public/fonts/Chivo-VariableFont_wght.ttf') format('truetype-variations'), url('/public/fonts/Chivo-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+:root {
+  --clr-primary-500: #54e6af;
+  --clr-primary-200: #b3ffe2;
+
+  --clr-secondary-100: #c2cbe5;
+  --clr-secondary-200: #5b678b;
+  --clr-secondary-300: #5A668A;
+  --clr-secondary-400: #2b334a;
+  --clr-secondary-900: #121726;
+
+  --clr-background-mask: #121725;
+
+  --clr-neutral-100: #ffffff;
+
+  --clr-error: #FB3E3E;
+
+  --ff-primary: "Chivo", sans-serif;
+
+  --fw-100: 100;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-600: 600;
+
+  --fs-100: 0.9375rem;
+  --fs-200: 1.125rem;
+  --fs-300: 1.625rem;
+  --fs-400: 1.75rem;
+  --fs-450: 3rem;
+  --fs-500: 3.25rem;
+  --fs-600: 3.875rem;
+}
+
+/* CSS Reset */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* CSS Custom Properties */
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-300);
+  color: var(--clr-secondary-100);
+  overflow-x: hidden;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--clr-secondary-900);
+}
+
+.background::before {
+  content: "";
+  background-image: url(/public/assets/mobile/image-host.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-repeat: no-repeat;
+  opacity: 0.05;
+}
+
+.background>* {
+  position: relative;
+}
+
+
+.header-logo img {
+  /* margin: top-value right-value bottom-value left-value; */
+  margin: 3.87rem auto 0 auto;
+}
+
+main {
+  margin: 0 1.5rem;
+}
+
+h1 {
+  color: var(--clr-primary-500);
+  text-transform: uppercase;
+  font-weight: var(--fw-300);
+
+  margin-top: 3.56rem;
+  text-align: center;
+  font-size: var(--fs-300);
+}
+
+h1 span {
+  color: var(--clr-neutral-100);
+}
+
+p {
+  color: var(-clr-secondary-100);
+  font-size: var(--fs-100);
+  line-height: 1.5625rem;
+  margin-top: 1rem;
+  text-align: center;
+  opacity: 0.5;
+
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+  margin-bottom: 3.75rem;
+  opacity: 0.5;
+}
+
+.spotify {
+  width: 3.5rem;
+}
+
+.apple {
+  width: 2.8125rem;
+}
+
+.google {
+  width: 4.5625rem;
+}
+
+.pocket {
+  width: 4.8125rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 3.2rem;
+  justify-content: center;
+}
+
+input {
+  border: 0;
+  background: var(--clr-secondary-400);
+  border-radius: 1.75rem;
+  height: 2.875rem;
+  font-size: var(--fs-100);
+  padding-left: 2rem;
+  font-weight: var(--fw-600);
+
+  color: var(--clr-secondary-100);
+}
+
+button {
+  border: 0;
+  background: var(--clr-primary-500);
+  border-radius: 1.75rem;
+  height: 2.875rem;
+  font-size: var(--fs-100);
+  color: var(--clr-secondary-900);
+  cursor: pointer;
+  font-weight: var(--fw-600);
+}
+
+button:hover {
+  background: var(--clr-primary-200);
+}
+
+.error-message {
+  color: var(--clr-error);
+  font-size: var(--fs-100);
+  font-weight: var(--fw-600);
+  line-height: normal;
+  display: none;
+}
+
+.dot-pattern {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+
+  body {
+    background-color: var(--clr-secondary-900);
+  }
+
+  main {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left: 2.44rem;
+  }
+
+  .background {
+    background: url(/public/assets/tablet/image-host.jpg) top right no-repeat;
+    align-items: start;
+  }
+
+  .background::before {
+    display: none;
+  }
+
+  .header-logo img {
+    margin: 3.12rem auto 0 0;
+  }
+
+  .hero {
+    background-color: var(--clr-secondary-900);
+    width: 39.6875rem;
+    height: 31.8125rem;
+    margin-top: 9.5rem;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 100%;
+    height: 100%;
+  }
+
+  h1,
+  p {
+    text-align: left;
+  }
+
+  h1 {
+    font-size: var(--fs-450);
+  }
+
+  p {
+    font-size: var(--fs-200);
+    margin-right: 11.88rem;
+  }
+
+  .socials {
+    justify-content: space-between;
+    margin-right: 6.19rem;
+    order: 4;
+  }
+
+  .spotify {
+    width: 6rem;
+  }
+
+  .apple {
+    width: 4.875rem;
+  }
+
+  .google {
+    width: 7.8125rem;
+  }
+
+  .pocket {
+    width: 8.0625rem;
+  }
+
+  form {
+    display: inline;
+  }
+
+  input {
+
+    width: 26.6875rem;
+    height: 3.5rem;
+  }
+
+  button {
+    margin: 0 0 0 -10.125rem;
+    width: 10.125rem;
+    height: 2.875rem;
+  }
+
+  .dot-pattern {
+    display: block;
+    margin-top: 9.56rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    position: relative;
+  }
+
+  .background {
+    background: url(/public/assets/desktop/image-host.jpg) right 8.12rem no-repeat;
+    display: block;
+    position: inherit;
+  }
+
+  main {
+    margin: 0 10.81rem;
+    padding-top: 6.37rem;
+  }
+
+  .header-logo img {
+    margin: 0;
+  }
+
+  .hero {
+    background-color: var(--clr-secondary-900);
+    width: 45.1875rem;
+    height: 31.8125rem;
+    margin-top: 9.5rem;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+  }
+
+
+  h1 {
+    font-size: var(--fs-500);
+  }
+
+  p {
+    margin-right: 17.37rem;
+  }
+
+  .socials {
+    margin-right: 11.69rem;
+  }
+
+  .dot-pattern {
+    position: absolute;
+    top: 36.75rem;
+    right: 0;
+  }
+}
+
+/* Attributions */
+.attribution {
+  font-size: var(--fs-100);
+  text-align: center;
+  margin-block: 2rem;
+}
+
+.attribution a {
+  color: var(--clr-primary-400);
+}

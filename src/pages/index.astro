@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+// Import the icon components
+import SpotifyIcon from '../components/icons/SpotifyIcon.astro';
+import AppleIcon from '../components/icons/AppleIcon.astro';
+import GoogleIcon from '../components/icons/GoogleIcon.astro';
+import PocketIcon from '../components/icons/PocketIcon.astro';
+
+import Form from '../components/Form';
+---
+
+<BaseLayout title='Frontend Mentor | Pod request access landing page'>
+	<main>
+		<header>
+			<div class='header-logo'>
+				<img
+					src='assets/desktop/logo.svg'
+					alt='logo of Pod'
+					height='56'
+				/>
+			</div>
+		</header>
+		<div class='hero'>
+			<div class='hero-content'>
+				<h1>Publish your podcasts <span>everywhere.</span></h1>
+				<p>
+					Upload your audio to Pod with a single click. We’ll then
+					distribute your podcast to Spotify, Apple Podcasts, Google
+					Podcasts, Pocket Casts and more!
+				</p>
+				<div class='socials'>
+					<SpotifyIcon class='spotify' />
+					<AppleIcon class='apple' />
+					<GoogleIcon class='google' />
+					<PocketIcon class='pocket' />
+				</div>
+				<Form client:load />
+			</div>
+		</div>
+	</main>
+	<div class='dot-pattern'>
+		<img
+			src='assets/desktop/bg-pattern-dots.svg'
+			alt=''
+		/>
+	</div>
+</BaseLayout>
